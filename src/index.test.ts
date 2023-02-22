@@ -2,7 +2,7 @@ import { MCEvent } from '@managed-components/types'
 import { eventHandler } from '.'
 
 describe('Google Maps RWG event handler works correctly', async () => {
-  let executedJS: any = []
+  const executedJS: any = []
 
   const fakeEvent = new Event('pageview', {}) as MCEvent
   fakeEvent.name = 'Google Maps RWG Mock MC'
