@@ -1,17 +1,13 @@
 import { ComponentSettings, Manager, MCEvent } from '@managed-components/types'
 
 export const eventHandler = async (eventType: string, event: MCEvent) => {
-  const { client, payload } = event
+  const { client } = event
   const rwg_token = client.url.searchParams.get('rwg_token')
   if (rwg_token) {
     // Generate Cookie with max-age of 2592000 seconds (30 days)
     let cookie = `_rwg_token=${encodeURIComponent(
       rwg_token
     )}; Max-Age=2592000; Path=/;`
-
-    if (payload.baseDomain) {
-      cookie += ` Domain=${encodeURIComponent(payload.baseDomain)};`
-    }
 
     client.execute("document.cookie = '" + cookie.replaceAll("'", "\\'") + "';")
   }
