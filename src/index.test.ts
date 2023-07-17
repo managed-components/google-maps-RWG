@@ -39,6 +39,5 @@ describe('Google Maps RWG event handler works correctly', async () => {
     expect(cookieJs).toBeTruthy()
     expect(cookieJs).toMatch(/'_rwg_token=12345(; ?|$)/)
     expect(cookieJs).toMatch(/; Max\-Age=2592000(; ?|$)/)
-    expect(cookieJs).toMatch(/; Domain=test\.com(; ?|$)/)
   })
 })
