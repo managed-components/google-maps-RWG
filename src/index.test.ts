@@ -23,10 +23,10 @@ describe('Google Maps RWG event handler works correctly', async () => {
       executedJS.push(jsString)
       return true
     },
-    return: () => {},
+    return: () => undefined,
     get: () => undefined,
-    attachEvent: () => {},
-    detachEvent: () => {},
+    attachEvent: () => undefined,
+    detachEvent: () => undefined,
   }
 
   await eventHandler('pageview', fakeEvent)
@@ -38,6 +38,6 @@ describe('Google Maps RWG event handler works correctly', async () => {
 
     expect(cookieJs).toBeTruthy()
     expect(cookieJs).toMatch(/'_rwg_token=12345(; ?|$)/)
-    expect(cookieJs).toMatch(/; Max\-Age=2592000(; ?|$)/)
+    expect(cookieJs).toMatch(/; Max-Age=2592000(; ?|$)/)
   })
 })

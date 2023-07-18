@@ -5,7 +5,7 @@ export const eventHandler = async (eventType: string, event: MCEvent) => {
   const rwg_token = client.url.searchParams.get('rwg_token')
   if (rwg_token) {
     // Generate Cookie with max-age of 2592000 seconds (30 days)
-    let cookie = `_rwg_token=${encodeURIComponent(
+    const cookie = `_rwg_token=${encodeURIComponent(
       rwg_token
     )}; Max-Age=2592000; Path=/;`
 
